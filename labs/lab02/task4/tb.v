@@ -44,3 +44,16 @@ module tb;
              t_a, t_b, y_df, y_before, y_intra);
 
 endmodule
+
+// d
+// assign #N implements inertial delay. (filters pulses =< N) and N<pulse are modeled delay
+//#N y delays sampling. completely misses the intermediate input changes
+// y= #N delays assignment and evaluated ip at T, but delays writing y to N. any changes during that window fail to trigger a new evaluation
+
+//e 
+
+//avoid containing # in always@(*) block
+
+//for continuous assingment use assign #N
+
+//functional RTL should be written without #
